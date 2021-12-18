@@ -30,36 +30,33 @@ print(RED + "I am red on white!" + ON_WHITE)
 `pip install colorie`
 # Text Properties
 
-> Text colors:
-> 
-> >   - grey
-> >   - red
-> >   - green
-> >   - yellow
-> >   - blue
-> >   - magenta
-> >   - cyan
-> >   - white
-> 
-> Text highlights:
-> 
-> >   - on\_grey
-> >   - on\_red
-> >   - on\_green
-> >   - on\_yellow
-> >   - on\_blue
-> >   - on\_magenta
-> >   - on\_cyan
-> >   - on\_white
-> 
-> Attributes:
-> 
-> >   - bold
-> >   - dark
-> >   - underline
-> >   - blink
-> >   - reverse
-> >   - concealed
+* Text colors
+    * grey
+    * red
+    * green
+    * yellow
+    * blue
+    * magenta
+    * cyan
+    * white
+
+* Text highlights
+    * on\_grey
+    * on\_red
+    * on\_green
+    * on\_yellow
+    * on\_blue
+    * on\_magenta
+    * on\_cyan
+    * on\_white
+
+* Attributes
+    * bold
+    * dark
+    * underline
+    * blink
+    * reverse
+    * concealed
 
 # Terminal properties
 
