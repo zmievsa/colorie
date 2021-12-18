@@ -5,7 +5,7 @@ identifiers upon creation, so all errors can be caught early.
 # Example
 ```python
 import sys
-from termcolor import Color, colored, cprint
+from colorie import Color, colored, cprint
 
 text = colored('Hello, World!', 'red', attrs=['reverse', 'blink'])
 print(text)
