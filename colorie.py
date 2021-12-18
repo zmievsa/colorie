@@ -28,7 +28,6 @@ import os
 from typing import Iterable, Optional, Sequence, Union, overload
 
 __ALL__ = ["Color", "colored", "cprint"]
-__VERSION__ = (2, 0, 0)
 
 ANSII_ESCAPE = "\33[{codes}m"
 RESET = ANSII_ESCAPE.format(codes="0")
