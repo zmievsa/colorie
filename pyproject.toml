@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "colorie"
+version = "0.1.0"
+description = "ANSII Color formatting for output in terminal"
+authors = ["Ovsyanka83 <szmiev2000@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/Ovsyanka83/colorie"
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Console',
+    'Intended Audience :: Developers',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Topic :: Terminals',
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
