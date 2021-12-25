@@ -107,6 +107,9 @@ class Color:
     def __radd__(self, other: str) -> "ColoredString":
         return self + other
 
+    def __eq__(self, other: "Color") -> bool:
+        return self.color == other.color and self.highlight == other.highlight and self.attrs == other.attrs
+
 
 class ColoredString:
     __slots__ = "original_str", "color"
@@ -115,7 +118,7 @@ class ColoredString:
 
     def __init__(self, original_str: str, color: Color, strict=True):
         if strict:
-            validate_args(self.color.color, self.color.highlight, self.color.attrs)
+            validate_args(color.color, color.highlight, color.attrs)
         self.original_str = original_str
         self.color = color
 
@@ -123,11 +126,11 @@ class ColoredString:
         return colored(self.original_str, self.color.color, self.color.highlight, self.color.attrs, strict=False)
 
     def __repr__(self) -> str:
-        return f"ColoredString(original_str={self.original_str}, color={self.color})"
+        return f"ColoredString(original_str={self.original_str}, color={repr(self.color)})"
 
     def __add__(self, other: Union[Color, str, "ColoredString"]) -> "ColoredString":
         if isinstance(other, Color):
-            return ColoredString(self.original_str, self.color + other, False)
+            return other + self
         elif isinstance(other, str):
             return ColoredString(self.original_str + other, self.color, False)
         elif isinstance(other, ColoredString):
@@ -136,7 +139,7 @@ class ColoredString:
             raise NotImplementedError(f'Cannot add "ColoredString" to "{type(other)}"')
 
     def __radd__(self, other: str) -> "ColoredString":
-        return ColoredString(other + self.original_str, self.color)
+        return ColoredString(other + self.original_str, self.color, False)
 
 
 def colored(
@@ -190,7 +193,7 @@ def validate_args(color: Optional[str], highlight: Optional[str], attrs: Iterabl
     if color is not None:
         to_validate.append(("color", color, COLORS))
     for arg_name, arg, dict_with_escape_codes in to_validate:
-        if arg not in dict_with_escape_codes:
+        if arg.lower() not in dict_with_escape_codes:
             raise KeyError(f'Invalid {arg_name} argument: "{arg}"')
 
 

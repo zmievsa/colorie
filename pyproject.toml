@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "colorie"
-version = "0.1.1"
+version = "0.1.2"
 description = "ANSII Color formatting for output in terminal"
 authors = ["Ovsyanka83 <szmiev2000@gmail.com>"]
 license = "MIT"
